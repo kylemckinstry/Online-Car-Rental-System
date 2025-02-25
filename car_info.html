@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+</head>
+
+<!-- <body onload="getCars();">
+    <div class="container">
+        <div id="infoArea" class="row mt-4">
+            <div class="col-md-4 mb-4" v-for="car in cars">
+                <div class="card d-flex flex-column" >
+                    <img class="card-img-top img-fluid" v-bind:src="'../../images/'+car.id+'.jpg'"
+                        style="height: 15rem; width: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ffc107">{{car.brand}} {{car.model}} {{car.modelYear}}</h4> -->
+
+<!-- <body onload="getCars();"> -->
+<body>
+    <div class="container" style="height: 100vh">
+        <div id="infoArea" class="row mt-2">
+            <div class="col-md-4 mb-4 d-flex" v-for="car in cars">
+                <div class="card flex-fill d-flex flex-colum">
+                    <img class="card-img-top img-fluid" v-bind:src="'images/'+car.id+'.jpg'"
+                        style="height: auto; width: auto; display: block; margin-left: auto; margin-right: auto;">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ffc107">{{car.brand}} {{car.model}} {{car.modelYear}}</h4>
+
+                        <!-- <ul class="list-unstyled">
+                        <li class="card-text"><b>Price per day: </b>{{car.priceDay}}</li>
+                        <li class="card-text"><b>Available: </b><span style="text-transform: capitalize;">{{car.availability}}</span></li>
+                        <li class="card-text"><b>Description: </b>{{car.description}}</li>
+                        <li class="card-text"><b>Mileage: </b>{{car.mileage}}</li>
+                        <li class="card-text"><b>Fuel type: </b>{{car.fuelType}}</li>
+                        <li class="card-text"><b>Seats: </b>{{car.seats}}</li>
+                    </ul> -->
+
+                        <table style="width:100%; font-family: Muli;">
+                            <tr class="card-text" style="vertical-align: top;">
+                                <th style="width: 50%">Price per day:</th>
+                                <th style="font-weight: lighter; width: 50%">${{car.priceDay}}</th>
+                            </tr>
+                            <tr class="card-text" style="vertical-align: top;"></tr>
+                            <th style="width: 50%">Available:</th>
+                            <th style="font-weight: lighter; width: 50%"><span
+                                    style="text-transform: capitalize;">{{car.availability}}</span></th>
+                            </tr>
+                            <tr class="card-text"></tr>
+                            <th style="width: 50%">Mileage:</th>
+                            <th style="font-weight: lighter">{{car.mileage}}</th>
+                            </tr>
+                            <tr class="card-text"></tr>
+                            <th style="width: 50%">Fuel type:</th>
+                            <th style="font-weight: lighter">{{car.fuelType}}</th>
+                            </tr>
+                            <tr class="card-text"></tr>
+                            <th style="width: 50%">Seats:</th>
+                            <th style="font-weight: lighter">{{car.seats}}</th>
+                            </tr>
+                        </table>
+                        <table style="width:100%; font-family: Muli;">
+                            <tr colspan="2"><hr></tr>
+                            <tr class="card-text" style="font-weight: lighter;">
+                                <td colspan="2">{{car.description}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- <a href="#" class="btn btn-warning" v-bind:class="{ 'disabled': !car.availability }" v-on:click="addToCart(car.id, $event);">Add to Cart</a> -->
+                    <a href="#" class="btn btn-warning" v-bind:class="{ 'disabled': !car.availability }" v-on:click="addToCart(car.id, $event);" v-bind:style="{ 'background-color': !car.availability ? 'gray' : '', 'border-color': !car.availability ? 'gray' : '', 'border-width': !car.availability ? '1px' : '', 'border-style': !car.availability ? 'solid' : '' }">Add to Cart</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            getCars();
+        };
+    </script>
+
+    <script type="text/javascript" src="main.js"></script>
+</body>

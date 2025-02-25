@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+
+    <title>Hertz-UTS | Car Hire</title>
+
+    <script language="javascript" type="text/javascript">
+        function iframeSize(frame) {
+            var frameBody = frame.contentWindow.document.body;
+            var frameHeight = `${frameBody.scrollHeight + 100}px`;
+            frame.style.height = frameHeight;
+        }
+    </script>
+
+</head>
+<body>
+<nav class="navbar fixed-top" style="background-color: black;">
+    <a href="index.html" class="navbar-brand mb-0 h1" style = "font-family: Muli; font-size: 2rem; color: #ffc107"><b>Hertz-UTS</b></span></a>
+    <a href="reservation.php" target="contentFrame" class="btn btn-warning" onclick="scrollToTop()">Reservation Cart</a>
+</nav>
+
+    <iframe name="contentFrame" id="contentFrame" frameborder="0" scrolling="no" onload='iframeSize(this);'
+    style="width: 100%; margin-top: 6rem;"
+    src="car_info.html"></iframe>
+
+<script>
+function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+    });
+  }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
